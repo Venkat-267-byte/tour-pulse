@@ -1,10 +1,26 @@
+// Wait for the DOM to load
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(255, 255, 255, 1)';
+            navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = 'none';
+        }
+    });
+
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
     if(menuToggle) {
         menuToggle.addEventListener('click', () => {
+            // Simple toggle for mobile view
             if (navLinks.style.display === 'flex') {
                 navLinks.style.display = 'none';
             } else {
@@ -20,14 +36,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // Scroll Effect for Navbar
-    window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-        } else {
-            navbar.style.boxShadow = 'none';
-        }
-    });
 });
