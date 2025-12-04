@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tour Pulse | Experience the Extraordinary</title>
+    <title>Tour Pulse | The Spirit of Hyderabad</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -17,43 +20,28 @@
         <ul class="nav-links">
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#destinations">Destinations</a></li>
-            <li><a href="#experiences">Experiences</a></li>
-            <li><a href="#plan">Plan Your Trip</a></li>
+            <li><a href="#essentials">Essentials</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-actions">
-            <button class="btn-login">Login</button>
+            <button class="btn-login">Sign Up</button>
             <i class="fas fa-bars menu-toggle"></i>
         </div>
     </nav>
 
     <header id="home" class="hero">
         <div class="video-overlay"></div>
-        <video autoplay muted loop playsinline class="hero-bg">
-    <source src="hero-video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>        
+        <img src="https://images.unsplash.com/photo-1626014903264-6df594411d2c?q=80&w=2070&auto=format&fit=crop" class="hero-bg" alt="Hyderabad City">
+        
         <div class="hero-content">
-            <h1 class="fade-in">Experience the<br> <span class="highlight">Pulse of Hyderabad</span></h1>
-            <p class="fade-in delay">Where heritage meets the horizon.</p>
+            <h1 class="fade-in">Discover the <br> <span class="highlight">Pulse of Hyderabad</span></h1>
+            <p class="fade-in delay">Heritage, Culture, and the World's Best Biryani.</p>
             
-            <div class="search-bar fade-in delay-2">
-                <div class="search-item">
-                    <label>Destination</label>
-                    <input type="text" placeholder="Where to?">
-                </div>
-                <div class="search-item">
-                    <label>Date</label>
-                    <input type="date">
-                </div>
-                <div class="search-item">
-                    <label>Vibe</label>
-                    <select>
-                        <option>Heritage</option>
-                        <option>Adventure</option>
-                        <option>Relaxation</option>
-                    </select>
-                </div>
-                <button class="btn-search"><i class="fas fa-search"></i></button>
+            <div class="category-pills fade-in delay-2">
+                <span class="pill"><i class="fas fa-monument"></i> Heritage</span>
+                <span class="pill"><i class="fas fa-water"></i> Lakes</span>
+                <span class="pill"><i class="fas fa-gopuram"></i> Temples</span>
+                <span class="pill"><i class="fas fa-utensils"></i> Food</span>
             </div>
         </div>
     </header>
@@ -61,8 +49,8 @@
     <section id="destinations" class="section">
         <div class="container">
             <div class="section-header">
-                <h2>Curated Destinations</h2>
-                <p>Discover the jewels of the city.</p>
+                <h2>Iconic Landmarks</h2>
+                <p>Explore the jewels of the Nizam's city.</p>
             </div>
             
             <div class="grid-cards">
@@ -73,7 +61,7 @@
                     </div>
                     <div class="card-info">
                         <h3>The Charminar</h3>
-                        <p>The iconic heart of Hyderabad, standing tall since 1591.</p>
+                        <p>The global icon of Hyderabad, built in 1591. Experience the bustling bazaars surrounding it.</p>
                         <a href="#" class="btn-link">Explore <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -84,20 +72,20 @@
                         <span class="tag">Leisure</span>
                     </div>
                     <div class="card-info">
-                        <h3>Hussain Sagar</h3>
-                        <p>A serene lake connecting the twin cities with a massive Buddha statue.</p>
+                        <h3>Hussain Sagar Lake</h3>
+                        <p>Asia's largest artificial lake, featuring the monolithic Buddha statue standing tall in the center.</p>
                         <a href="#" class="btn-link">Explore <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1626014903264-6df594411d2c?q=80&w=2070&auto=format&fit=crop" alt="Ramoji Film City">
-                        <span class="tag">Entertainment</span>
+                        <img src="https://images.unsplash.com/photo-1590425881474-783dfdf354eb?q=80&w=1974&auto=format&fit=crop" alt="Golconda Fort">
+                        <span class="tag">History</span>
                     </div>
                     <div class="card-info">
-                        <h3>Ramoji Film City</h3>
-                        <p>The world's largest film studio complex. Live the movie magic.</p>
+                        <h3>Golconda Fort</h3>
+                        <p>A medieval fortress known for its acoustic architecture and glorious past.</p>
                         <a href="#" class="btn-link">Explore <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -105,30 +93,52 @@
         </div>
     </section>
 
-    <section id="experiences" class="section dark-bg">
-        <div class="container split-layout">
-            <div class="text-block">
-                <h2>A Taste of Tradition</h2>
-                <p>Hyderabad is not just a place; it's a flavor. From the world-famous Biryani to the delicate Irani Chai, immerse your senses in a culinary journey that dates back centuries.</p>
-                <button class="btn-primary">View Food Guide</button>
+    <section id="essentials" class="section dark-bg">
+        <div class="container">
+            <div class="section-header white-text">
+                <h2>Traveler Essentials</h2>
+                <p>Everything you need to know before you go.</p>
             </div>
-            <div class="image-block">
-                <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=2000&auto=format&fit=crop" alt="Biryani">
+
+            <div class="essentials-grid">
+                <div class="info-box">
+                    <i class="fas fa-calendar-alt icon-gold"></i>
+                    <h4>Best Time</h4>
+                    <p>October to February is ideal with pleasant, cool weather.</p>
+                </div>
+
+                <div class="info-box">
+                    <i class="fas fa-subway icon-gold"></i>
+                    <h4>Local Transport</h4>
+                    <p>Metro, Buses, Autos & Cabs. UPI payments are widely accepted.</p>
+                </div>
+
+                <div class="info-box">
+                    <i class="fas fa-language icon-gold"></i>
+                    <h4>Language</h4>
+                    <p>Telugu & Urdu are native. English is widely understood.</p>
+                </div>
+
+                <div class="info-box">
+                    <i class="fas fa-glass-water icon-gold"></i>
+                    <h4>Food & Water</h4>
+                    <p>Must try: Hyderabadi Biryani. Stick to filtered/bottled water.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <footer id="contact">
         <div class="container footer-content">
             <div class="footer-col">
                 <h3>Tour Pulse.</h3>
-                <p>Your premium gateway to exploring the world, starting with Hyderabad.</p>
+                <p>Curating extraordinary experiences in Hyderabad.</p>
             </div>
             <div class="footer-col">
-                <h4>Quick Links</h4>
-                <a href="#">About Us</a>
-                <a href="#">Contact</a>
-                <a href="#">Press</a>
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-phone"></i> +91 0123456789</p>
+                <p><i class="fas fa-envelope"></i> help@tourpulse.com</p>
+                <p><i class="fas fa-shield-alt"></i> Emergency: 112</p>
             </div>
             <div class="footer-col">
                 <h4>Follow Us</h4>
