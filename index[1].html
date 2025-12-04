@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Pulse | Experience the Extraordinary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Tour Pulse.</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#plan">Plan Your Trip</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="btn-login">Login</button>
+            <i class="fas fa-bars menu-toggle"></i>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="video-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=2071&auto=format&fit=crop" class="hero-bg" alt="Hyderabad Charminar">
+        
+        <div class="hero-content">
+            <h1 class="fade-in">Experience the<br> <span class="highlight">Pulse of Hyderabad</span></h1>
+            <p class="fade-in delay">Where heritage meets the horizon.</p>
+            
+            <div class="search-bar fade-in delay-2">
+                <div class="search-item">
+                    <label>Destination</label>
+                    <input type="text" placeholder="Where to?">
+                </div>
+                <div class="search-item">
+                    <label>Date</label>
+                    <input type="date">
+                </div>
+                <div class="search-item">
+                    <label>Vibe</label>
+                    <select>
+                        <option>Heritage</option>
+                        <option>Adventure</option>
+                        <option>Relaxation</option>
+                    </select>
+                </div>
+                <button class="btn-search"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section id="destinations" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Curated Destinations</h2>
+                <p>Discover the jewels of the city.</p>
+            </div>
+            
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1560388414-b83c4852e642?q=80&w=1974&auto=format&fit=crop" alt="Charminar">
+                        <span class="tag">Heritage</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>The Charminar</h3>
+                        <p>The iconic heart of Hyderabad, standing tall since 1591.</p>
+                        <a href="#" class="btn-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Hussain_Sagar_Lake_Hyderabad.jpg" alt="Hussain Sagar">
+                        <span class="tag">Leisure</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Hussain Sagar</h3>
+                        <p>A serene lake connecting the twin cities with a massive Buddha statue.</p>
+                        <a href="#" class="btn-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1626014903264-6df594411d2c?q=80&w=2070&auto=format&fit=crop" alt="Ramoji Film City">
+                        <span class="tag">Entertainment</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Ramoji Film City</h3>
+                        <p>The world's largest film studio complex. Live the movie magic.</p>
+                        <a href="#" class="btn-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiences" class="section dark-bg">
+        <div class="container split-layout">
+            <div class="text-block">
+                <h2>A Taste of Tradition</h2>
+                <p>Hyderabad is not just a place; it's a flavor. From the world-famous Biryani to the delicate Irani Chai, immerse your senses in a culinary journey that dates back centuries.</p>
+                <button class="btn-primary">View Food Guide</button>
+            </div>
+            <div class="image-block">
+                <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=2000&auto=format&fit=crop" alt="Biryani">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Tour Pulse.</h3>
+                <p>Your premium gateway to exploring the world, starting with Hyderabad.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Press</a>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="socials">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Tour Pulse. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
