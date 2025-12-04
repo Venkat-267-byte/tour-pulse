@@ -1,1 +1,87 @@
-<html><body><h1>Tour Pulse</h1></body></html>
+
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tour Pulse — Explore Hyderabad</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="header">
+  <div class="container header-inner">
+    <div class="brand"><h1>Tour Pulse</h1></div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="actions"><button id="profileBtn" class="profile-btn" aria-label="Login">👤</button></div>
+  </div>
+</header>
+
+<section class="hero">
+  <video autoplay muted loop playsinline src="assets/video/hyd-video.mp4"></video>
+  <img src="assets/hyd-banner.jpg" alt="Hussain Sagar" />
+  <div class="hero-overlay"></div>
+  <div class="hero-inner container">
+    <div class="hero-left">
+      <h2>Explore Hyderabad with <span class="accent">Tour Pulse</span></h2>
+      <p class="lead">Discover iconic landmarks, culture, and the best local food.</p>
+      <div class="search-row">
+        <input id="placeSearch" placeholder="Search destinations or categories (fort, lake, temple, food, offbeat)">
+        <button id="searchBtn" class="btn-primary">Explore</button>
+      </div>
+      <div id="suggestionsBox" class="suggestions"></div>
+      <div class="cats" style="margin-top:12px">
+        <button class="cat" onclick="filterPlaces('heritage')">🏰 Heritage</button>
+        <button class="cat" onclick="filterPlaces('lake')">🌊 Lakes</button>
+        <button class="cat" onclick="filterPlaces('temple')">⛩ Temples</button>
+        <button class="cat" onclick="filterPlaces('food')">🍽 Food</button>
+        <button class="cat" onclick="filterPlaces('offbeat')">✨ Offbeat</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about-featured">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h3>Featured Attractions</h3>
+      <a href="destinations.html" style="color:var(--brand-1);font-weight:700">View all →</a>
+    </div>
+    <div class="dest-grid" id="destGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="things">
+  <div class="container">
+    <h3>Things to Know Before Travelling</h3>
+    <div class="things-grid">
+      <div class="thing-card card"><img src="assets/icons/calendar.png" alt=""><h4>Best Time</h4><p>October to February — pleasant weather.</p></div>
+      <div class="thing-card card"><img src="assets/icons/transport.png" alt=""><h4>Local Transport</h4><p>Metro, buses, autos & cabs; UPI widely accepted.</p></div>
+      <div class="thing-card card"><img src="assets/icons/language.png" alt=""><h4>Language</h4><p>Telugu & Urdu; English widely understood.</p></div>
+      <div class="thing-card card"><img src="assets/icons/foodicon.png" alt=""><h4>Food & Water</h4><p>Try Hyderabadi Biryani; drink filtered/packaged water.</p></div>
+      <div class="thing-card card"><img src="assets/icons/safety.png" alt=""><h4>Emergency</h4><p>Emergency number: 112. Keep small cash for autos.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container inner">
+    <div>© Tour Pulse</div>
+    <div>Contact: <a href="tel:0123456789">0123456789</a></div>
+  </div>
+</footer>
+
+<!-- Auth modal -->
+<div id="authModal" class="modal" aria-hidden="true">
+  <div class="modal-box">
+    <button id="closeAuth" class="modal-close">×</button>
+    <h3>Login / Sign Up</h3>
+    <input id="authUser" placeholder="Email or username" style="width:100%;padding:10px;margin:8px 0" />
+    <input id="authPass" type="password" placeholder="Password" style="width:100%;padding:10px;margin:8px 0" />
+    <div style="display:flex;gap:10px"><button class="btn-primary">Login</button><button class="btn-info">Sign Up</button></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
