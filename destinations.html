@@ -32,152 +32,45 @@
         </div>
     </section>
 
-    <footer style="background: #111; color: #888; padding: 50px; text-align: center; margin-top: 50px;">
-        <p>© 2025 Tour Pulse.</p>
+    <footer id="contact" style="background: #111; color: #888; padding: 60px 5%; margin-top: 50px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+            <div>
+                <h3 style="color: white; margin-bottom: 20px; font-family: 'Playfair Display', serif;">Tour Pulse.</h3>
+                <p>Minimalist luxury travel.</p>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 20px;">Contact Us</h4>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> hello@tourpulse.com</p>
+            </div>
+        </div>
+        <div style="border-top: 1px solid #333; padding-top: 20px; text-align: center;">
+            <p>© 2025 Tour Pulse.</p>
+        </div>
     </footer>
 
     <script>
         const destinations = [
-            {
-                name: "Charminar",
-                category: "Heritage",
-                image: "https://images.unsplash.com/photo-1560388414-b83c4852e642?q=80&w=1974",
-                desc: "The global icon of Hyderabad, built in 1591. Famous for its four minarets.",
-                map: "https://goo.gl/maps/Charminar"
-            },
-            {
-                name: "Golconda Fort",
-                category: "Heritage",
-                image: "https://images.unsplash.com/photo-1590425881474-783dfdf354eb?q=80",
-                desc: "A medieval fortress known for its acoustic system and diamond mines.",
-                map: "https://goo.gl/maps/Golconda"
-            },
-            {
-                name: "Hussain Sagar",
-                category: "Nature",
-                image: "https://upload.wikimedia.org/wikipedia/commons/7/71/Hussain_Sagar_Lake_Hyderabad.jpg",
-                desc: "Asia's largest heart-shaped artificial lake, featuring a massive Buddha statue.",
-                map: "https://goo.gl/maps/HussainSagar"
-            },
-            {
-                name: "Ramoji Film City",
-                category: "Entertainment",
-                image: "https://images.unsplash.com/photo-1626014903264-6df594411d2c?q=80",
-                desc: "The world's largest integrated film city complex.",
-                map: "https://goo.gl/maps/Ramoji"
-            },
-            {
-                name: "Birla Mandir",
-                category: "Spiritual",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Birla_mandir.jpg/800px-Birla_mandir.jpg",
-                desc: "A magnificent white marble temple offering panoramic city views.",
-                map: "https://goo.gl/maps/BirlaMandir"
-            },
-            {
-                name: "Salar Jung Museum",
-                category: "Museum",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Salar_jung_museum_hyderabad.jpg/800px-Salar_jung_museum_hyderabad.jpg",
-                desc: "One of the largest one-man collections of antiques in the world.",
-                map: "https://goo.gl/maps/SalarJung"
-            },
-            {
-                name: "Chowmahalla Palace",
-                category: "Heritage",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Chowmahalla_Palace_Durbar_Hall.jpg/800px-Chowmahalla_Palace_Durbar_Hall.jpg",
-                desc: "The seat of the Asaf Jahi dynasty, known for its elegance.",
-                map: "https://goo.gl/maps/Chowmahalla"
-            },
-            {
-                name: "Qutub Shahi Tombs",
-                category: "Heritage",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Qutb_Shahi_Tombs_01.jpg/800px-Qutb_Shahi_Tombs_01.jpg",
-                desc: "Majestic granite tombs of the seven Qutub Shahi rulers.",
-                map: "https://goo.gl/maps/QutubShahi"
-            },
-            {
-                name: "Nehru Zoo Park",
-                category: "Nature",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/White_Tiger_at_Nehru_Zoological_Park%2C_Hyderabad.jpg/800px-White_Tiger_at_Nehru_Zoological_Park%2C_Hyderabad.jpg",
-                desc: "One of India's largest zoos, home to the white tiger safari.",
-                map: "https://goo.gl/maps/ZooPark"
-            },
-            {
-                name: "Lumbini Park",
-                category: "Nature",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Lumbini_Park.jpg/800px-Lumbini_Park.jpg",
-                desc: "Urban park famous for laser shows and musical fountains.",
-                map: "https://goo.gl/maps/Lumbini"
-            },
-            {
-                name: "NTR Gardens",
-                category: "Nature",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/NTR_Gardens.jpg/800px-NTR_Gardens.jpg",
-                desc: "Recreational garden with unique flora and a toy train.",
-                map: "https://goo.gl/maps/NTRGardens"
-            },
-            {
-                name: "Chilkur Balaji",
-                category: "Spiritual",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chilkur_Balaji_Temple_Gopuram.jpg/800px-Chilkur_Balaji_Temple_Gopuram.jpg",
-                desc: "Famous 'Visa Balaji' temple known for not accepting donations.",
-                map: "https://goo.gl/maps/Chilkur"
-            },
-            {
-                name: "Mecca Masjid",
-                category: "Spiritual",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Mecca_Masjid_Hyderabad.jpg/800px-Mecca_Masjid_Hyderabad.jpg",
-                desc: "One of the oldest and largest mosques in India.",
-                map: "https://goo.gl/maps/MeccaMasjid"
-            },
-            {
-                name: "Taramati Baradari",
-                category: "Heritage",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Taramati-Baradari.jpg/800px-Taramati-Baradari.jpg",
-                desc: "Historic Sarai with great acoustics.",
-                map: "https://goo.gl/maps/Taramati"
-            },
-            {
-                name: "Sudha Cars Museum",
-                category: "Museum",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Sudha_Cars_Museum_entrance.jpg/800px-Sudha_Cars_Museum_entrance.jpg",
-                desc: "Wacky handmade car museum featuring cars shaped like burgers.",
-                map: "https://goo.gl/maps/SudhaCars"
-            },
-            {
-                name: "KBR National Park",
-                category: "Nature",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Kbr_park.jpg/800px-Kbr_park.jpg",
-                desc: "Vast national park in Jubilee Hills with peacocks.",
-                map: "https://goo.gl/maps/KBRPark"
-            },
-            {
-                name: "Shilparamam",
-                category: "Heritage",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Shilparamam_Diorama%2C_Hyderabad.jpg/800px-Shilparamam_Diorama%2C_Hyderabad.jpg",
-                desc: "Arts and crafts village showcasing ethnic rural life.",
-                map: "https://goo.gl/maps/Shilparamam"
-            },
-            {
-                name: "Jagannath Temple",
-                category: "Spiritual",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Jagannath_Temple_Hyderabad_India.jpg/800px-Jagannath_Temple_Hyderabad_India.jpg",
-                desc: "Modern replica of the Puri Jagannath temple.",
-                map: "https://goo.gl/maps/Jagannath"
-            },
-            {
-                name: "Paigah Tombs",
-                category: "Heritage",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Paigah_Tombs_03.jpg/800px-Paigah_Tombs_03.jpg",
-                desc: "Unique geometrical patterned architecture.",
-                map: "https://goo.gl/maps/Paigah"
-            },
-            {
-                name: "Statue of Equality",
-                category: "Spiritual",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Statue_of_Equality%2C_Hyderabad.jpg/600px-Statue_of_Equality%2C_Hyderabad.jpg",
-                desc: "Massive statue symbolizing equality and devotion.",
-                map: "https://goo.gl/maps/Equality"
-            }
+            { name: "Charminar", category: "Heritage", image: "https://images.unsplash.com/photo-1560388414-b83c4852e642?q=80&w=1974", desc: "The global icon of Hyderabad, built in 1591." },
+            { name: "Golconda Fort", category: "Heritage", image: "https://images.unsplash.com/photo-1590425881474-783dfdf354eb?q=80", desc: "A medieval fortress known for its acoustic system." },
+            { name: "Hussain Sagar", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/7/71/Hussain_Sagar_Lake_Hyderabad.jpg", desc: "Asia's largest heart-shaped artificial lake." },
+            { name: "Ramoji Film City", category: "Entertainment", image: "https://images.unsplash.com/photo-1626014903264-6df594411d2c?q=80", desc: "The world's largest integrated film city complex." },
+            { name: "Birla Mandir", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Birla_mandir.jpg/800px-Birla_mandir.jpg", desc: "A magnificent white marble temple on a hill." },
+            { name: "Salar Jung Museum", category: "Museum", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Salar_jung_museum_hyderabad.jpg/800px-Salar_jung_museum_hyderabad.jpg", desc: "One of the largest one-man collections of antiques." },
+            { name: "Chowmahalla Palace", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Chowmahalla_Palace_Durbar_Hall.jpg/800px-Chowmahalla_Palace_Durbar_Hall.jpg", desc: "The seat of the Asaf Jahi dynasty." },
+            { name: "Qutub Shahi Tombs", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Qutb_Shahi_Tombs_01.jpg/800px-Qutb_Shahi_Tombs_01.jpg", desc: "Majestic granite tombs of the rulers." },
+            { name: "Nehru Zoo Park", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/White_Tiger_at_Nehru_Zoological_Park%2C_Hyderabad.jpg/800px-White_Tiger_at_Nehru_Zoological_Park%2C_Hyderabad.jpg", desc: "Home to the white tiger safari." },
+            { name: "Lumbini Park", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Lumbini_Park.jpg/800px-Lumbini_Park.jpg", desc: "Famous for laser shows and musical fountains." },
+            { name: "NTR Gardens", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/NTR_Gardens.jpg/800px-NTR_Gardens.jpg", desc: "Recreational garden with unique flora." },
+            { name: "Chilkur Balaji", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chilkur_Balaji_Temple_Gopuram.jpg/800px-Chilkur_Balaji_Temple_Gopuram.jpg", desc: "Famous Visa Balaji temple." },
+            { name: "Mecca Masjid", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Mecca_Masjid_Hyderabad.jpg/800px-Mecca_Masjid_Hyderabad.jpg", desc: "One of the oldest mosques in India." },
+            { name: "Taramati Baradari", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Taramati-Baradari.jpg/800px-Taramati-Baradari.jpg", desc: "Historic Sarai with great acoustics." },
+            { name: "Sudha Cars Museum", category: "Museum", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Sudha_Cars_Museum_entrance.jpg/800px-Sudha_Cars_Museum_entrance.jpg", desc: "Wacky handmade car museum." },
+            { name: "KBR National Park", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Kbr_park.jpg/800px-Kbr_park.jpg", desc: "Vast national park in Jubilee Hills." },
+            { name: "Shilparamam", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Shilparamam_Diorama%2C_Hyderabad.jpg/800px-Shilparamam_Diorama%2C_Hyderabad.jpg", desc: "Arts and crafts village." },
+            { name: "Jagannath Temple", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Jagannath_Temple_Hyderabad_India.jpg/800px-Jagannath_Temple_Hyderabad_India.jpg", desc: "Modern replica of the Puri temple." },
+            { name: "Paigah Tombs", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Paigah_Tombs_03.jpg/800px-Paigah_Tombs_03.jpg", desc: "Unique geometrical architecture." },
+            { name: "Statue of Equality", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Statue_of_Equality%2C_Hyderabad.jpg/600px-Statue_of_Equality%2C_Hyderabad.jpg", desc: "Massive statue of Ramanujacharya." }
         ];
 
         window.addEventListener('DOMContentLoaded', () => {
@@ -185,6 +78,10 @@
             if(grid) {
                 grid.innerHTML = '';
                 destinations.forEach(place => {
+                    // AUTO-GENERATE MAP LINK
+                    const mapQuery = encodeURIComponent(place.name + " Hyderabad");
+                    const mapLink = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+
                     grid.innerHTML += `
                         <div class="card" style="background: white; border: 1px solid #eee; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
                             <div style="
@@ -201,7 +98,9 @@
                                     <span style="background:#f5f5f5; color:#8A1538; padding:3px 10px; border-radius:15px; font-size:0.7rem; font-weight:bold;">${place.category}</span>
                                 </div>
                                 <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">${place.desc}</p>
-                                <a href="${place.map}" target="_blank" style="color: #8A1538; font-weight: bold; text-decoration: none;">View on Map →</a>
+                                <a href="${mapLink}" target="_blank" style="display:inline-block; background: #8A1538; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                                    <i class="fas fa-map-marker-alt"></i> View on Maps
+                                </a>
                             </div>
                         </div>
                     `;
