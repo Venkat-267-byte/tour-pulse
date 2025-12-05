@@ -15,47 +15,79 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="destinations.html" class="active">Destinations</a></li>
-            <li><a href="safety.html" class="safety-link">Safety Shield</a></li>
+            <li><a href="safety.html" style="color: #d32f2f; font-weight: 700;">Safety Shield</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <header class="page-header" style="background: #111; color: white; padding: 100px 0; text-align: center;">
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem;">The Collection</h1>
-        <p>20 Iconic locations.</p>
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px;">The Collection</h1>
+        <p style="font-size: 1.2rem; color: #ccc;">20 Iconic locations handpicked for you.</p>
     </header>
 
-    <section class="section">
+    <section class="section" style="padding: 50px 5%;">
         <div class="container">
-            <div class="grid-cards" id="destinations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;"></div>
+            <div class="grid-cards" id="destinations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                </div>
         </div>
     </section>
 
+    <footer style="background: #111; color: #888; padding: 50px; text-align: center; margin-top: 50px;">
+        <p>© 2025 Tour Pulse.</p>
+    </footer>
+
     <script>
         const destinations = [
-            { name: "Charminar", category: "Heritage", image: "https://images.unsplash.com/photo-1560388414-b83c4852e642?q=80", desc: "The global icon of Hyderabad.", map: "https://goo.gl/maps/1" },
-            { name: "Golconda Fort", category: "Heritage", image: "https://images.unsplash.com/photo-1590425881474-783dfdf354eb?q=80", desc: "Medieval fortress.", map: "https://goo.gl/maps/2" },
-            { name: "Hussain Sagar", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/7/71/Hussain_Sagar_Lake_Hyderabad.jpg", desc: "Heart-shaped lake.", map: "https://goo.gl/maps/3" },
-            { name: "Ramoji Film City", category: "Fun", image: "https://images.unsplash.com/photo-1626014903264-6df594411d2c?q=80", desc: "Largest film city.", map: "https://goo.gl/maps/4" },
-            { name: "Birla Mandir", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Birla_mandir.jpg/800px-Birla_mandir.jpg", desc: "White marble temple.", map: "https://goo.gl/maps/5" },
-            { name: "Chilkur Balaji", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chilkur_Balaji_Temple_Gopuram.jpg/800px-Chilkur_Balaji_Temple_Gopuram.jpg", desc: "Visa Balaji temple.", map: "https://goo.gl/maps/6" }
-        ];
-
-        const grid = document.getElementById('destinations-grid');
-        destinations.forEach(place => {
-            grid.innerHTML += `
-                <div class="card">
-                    <div style="height: 200px; overflow: hidden;">
-                        <img src="${place.image}" style="width: 100%; height: 100%; object-fit: cover;" alt="${place.name}">
-                    </div>
-                    <div style="padding: 20px;">
-                        <h3 style="margin: 0 0 10px 0;">${place.name}</h3>
-                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">${place.desc}</p>
-                        <a href="${place.map}" target="_blank" style="color: #8A1538; font-weight: bold;">View Map →</a>
-                    </div>
-                </div>
-            `;
-        });
-    </script>
-</body>
-</html>
+            {
+                name: "Charminar",
+                category: "Heritage",
+                image: "https://images.unsplash.com/photo-1560388414-b83c4852e642?q=80&w=1974",
+                desc: "The global icon of Hyderabad, built in 1591. Famous for its four minarets.",
+                map: "https://goo.gl/maps/Charminar"
+            },
+            {
+                name: "Golconda Fort",
+                category: "Heritage",
+                image: "https://images.unsplash.com/photo-1590425881474-783dfdf354eb?q=80",
+                desc: "A medieval fortress known for its acoustic system and diamond mines.",
+                map: "https://goo.gl/maps/Golconda"
+            },
+            {
+                name: "Hussain Sagar",
+                category: "Nature",
+                image: "https://upload.wikimedia.org/wikipedia/commons/7/71/Hussain_Sagar_Lake_Hyderabad.jpg",
+                desc: "Asia's largest heart-shaped artificial lake, featuring a massive Buddha statue.",
+                map: "https://goo.gl/maps/HussainSagar"
+            },
+            {
+                name: "Ramoji Film City",
+                category: "Entertainment",
+                image: "https://images.unsplash.com/photo-1626014903264-6df594411d2c?q=80",
+                desc: "The world's largest integrated film city complex.",
+                map: "https://goo.gl/maps/Ramoji"
+            },
+            {
+                name: "Birla Mandir",
+                category: "Spiritual",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Birla_mandir.jpg/800px-Birla_mandir.jpg",
+                desc: "A magnificent white marble temple offering panoramic city views.",
+                map: "https://goo.gl/maps/BirlaMandir"
+            },
+            {
+                name: "Salar Jung Museum",
+                category: "Museum",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Salar_jung_museum_hyderabad.jpg/800px-Salar_jung_museum_hyderabad.jpg",
+                desc: "One of the largest one-man collections of antiques in the world.",
+                map: "https://goo.gl/maps/SalarJung"
+            },
+            {
+                name: "Chowmahalla Palace",
+                category: "Heritage",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Chowmahalla_Palace_Durbar_Hall.jpg/800px-Chowmahalla_Palace_Durbar_Hall.jpg",
+                desc: "The seat of the Asaf Jahi dynasty, known for its elegance.",
+                map: "https://goo.gl/maps/Chowmahalla"
+            },
+            {
+                name: "Qutub Shahi Tombs",
+                category: "Heritage",
+                image: "
