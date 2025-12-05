@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour Pulse | The Spirit of Hyderabad</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -17,76 +15,49 @@
         <ul class="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="destinations.html">Destinations</a></li>
-            <li><a href="safety.html" style="color: #d32f2f; font-weight: 700;">Safety Shield</a></li>
+            <li><a href="safety.html" class="safety-link">Safety Shield</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="nav-actions">
-            <button class="btn-login">Sign In</button>
-            <i class="fas fa-bars menu-toggle"></i>
-        </div>
     </nav>
 
-    <header class="hero" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1662973714972-7634d0263f68?q=80&w=2070'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; justify-content: center; color: white;">
-        <div class="hero-content" style="text-align: center;">
+    <header class="hero" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1662973714972-7634d0263f68?q=80&w=2070'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; justify-content: center; color: white; text-align: center;">
+        <div class="hero-content">
             <h1 style="font-size: 4rem; margin-bottom: 20px; font-family: 'Playfair Display', serif;">The Pulse of Hyderabad</h1>
-            <p style="font-size: 1.5rem; margin-bottom: 30px;">Heritage. Culture. Cuisine. Discover it all.</p>
-            <a href="destinations.html" class="btn-primary" style="background: white; color: black; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold;">Start Exploring</a>
+            <p style="font-size: 1.5rem; margin-bottom: 30px;">Heritage. Culture. Cuisine.</p>
+            <a href="destinations.html" style="background: white; color: black; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold;">Start Exploring</a>
         </div>
     </header>
 
-    <section id="essentials" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Traveler Essentials</h2>
-                <p>Curated information for a seamless journey.</p>
+    <section class="section">
+        <div class="section-header">
+            <h2>Traveler Essentials</h2>
+        </div>
+        <div class="essentials-grid">
+            <div class="info-box">
+                <i class="fas fa-sun icon-minimal"></i>
+                <h4>Best Time</h4><p>Oct - Feb</p>
             </div>
-            <div class="essentials-grid">
-                <div class="info-box">
-                    <i class="fas fa-sun icon-minimal"></i>
-                    <h4>Best Time</h4>
-                    <p>October to February</p>
-                </div>
-                <div class="info-box">
-                    <i class="fas fa-map-pin icon-minimal"></i>
-                    <h4>Transport</h4>
-                    <p>Metro, Uber & Autos</p>
-                </div>
-                <div class="info-box">
-                    <i class="fas fa-utensils icon-minimal"></i>
-                    <h4>Cuisine</h4>
-                    <p>Biryani & Irani Chai</p>
-                </div>
-                <div class="info-box">
-                    <i class="fas fa-comments icon-minimal"></i>
-                    <h4>Language</h4>
-                    <p>Telugu, Urdu, English</p>
-                </div>
+            <div class="info-box">
+                <i class="fas fa-map-pin icon-minimal"></i>
+                <h4>Transport</h4><p>Metro & Uber</p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-utensils icon-minimal"></i>
+                <h4>Cuisine</h4><p>Biryani</p>
             </div>
         </div>
     </section>
 
-    <footer id="contact">
+    <footer>
         <div class="container footer-content">
             <div class="footer-col">
-                <h3>Tour Pulse.</h3>
-                <p>Minimalist luxury travel.</p>
+                <h3>Tour Pulse.</h3><p>Minimalist luxury travel.</p>
             </div>
             <div class="footer-col">
-                <h4>Contact</h4>
-                <p>+91 98765 43210</p>
-                <p>hello@tourpulse.com</p>
-            </div>
-            <div class="footer-col">
-                <h4>Connect</h4>
-                <div class="socials">
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-twitter"></i>
-                </div>
+                <h4>Contact</h4><p>+91 98765 43210</p>
             </div>
         </div>
         <div class="copyright">© 2025 Tour Pulse.</div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
