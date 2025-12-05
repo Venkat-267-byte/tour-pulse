@@ -31,6 +31,23 @@
 
     <section class="section" style="padding: 50px 5%;">
         <div class="container">
+            <div style="text-align: center; margin-bottom: 40px; background: #f9f9f9; padding: 20px; border-radius: 10px; border: 1px solid #eee;">
+                <h4 style="margin-bottom: 15px; color: #444;">Real-Time Crowd Indicators</h4>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 10px;">
+                    <span class="crowd-badge crowd-low">
+                        <span class="dot green"></span> Low
+                    </span>
+                    <span class="crowd-badge crowd-moderate">
+                        <span class="dot yellow"></span> Moderate
+                    </span>
+                    <span class="crowd-badge crowd-high">
+                        <span class="dot red"></span> High
+                    </span>
+                </div>
+                <p style="font-size: 0.85rem; color: #666; margin: 0;">
+                    <i class="fas fa-info-circle"></i> Check these indicators to avoid the rush and plan a safe trip.
+                </p>
+            </div>
             <div class="grid-cards" id="destinations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
                 </div>
         </div>
@@ -54,7 +71,7 @@
     </footer>
 
    <script>
-        // 1. Full Data with Crowd & Weather info added to ALL places
+        // 1. UPDATED DATA: Now includes 'crowd' property for every place
         const destinations = [
             { name: "Charminar", category: "Heritage", crowd: "High", image: "https://images.unsplash.com/photo-1560388414-b83c4852e642?q=80&w=1974", desc: "The global icon of Hyderabad, built in 1591. Known for its stucco ornamentation and bustling bazaars." },
             { name: "Golconda Fort", category: "Heritage", crowd: "Moderate", image: "https://images.unsplash.com/photo-1590425881474-783dfdf354eb?q=80", desc: "A medieval fortress known for its acoustic system and diamond mines." },
@@ -79,18 +96,18 @@
         ];
 
         window.addEventListener('DOMContentLoaded', () => {
-            initWeatherAlert();
-            renderDestinations();
+            initWeatherAlert();   // Feature 1: Check Weather
+            renderDestinations(); // Feature 2: Load Cards with Crowd Info
         });
 
-        // --- FEATURE 1: RENDER CARDS WITH CROWD INDICATOR ---
+        // --- RENDER FUNCTION ---
         function renderDestinations() {
             const grid = document.getElementById('destinations-grid');
             if(!grid) return;
             
             grid.innerHTML = '';
             destinations.forEach(place => {
-                // Determine Crowd Color
+                // Determine Crowd Color based on data
                 let crowdClass = 'crowd-low';
                 let dotColor = 'green';
                 if(place.crowd === 'Moderate') { crowdClass = 'crowd-moderate'; dotColor = 'yellow'; }
@@ -134,17 +151,16 @@
             });
         }
 
-        // --- FEATURE 2: WEATHER ALERTS ---
+        // --- WEATHER ALERT LOGIC ---
         function initWeatherAlert() {
-            // Simulating a weather API call
-            const weatherConditions = ['Sunny', 'Rainy', 'Heatwave'];
-            const currentCondition = 'Heatwave'; // Change this to test different alerts
+            // NOTE: Change 'currentCondition' below to 'Rainy' or 'Sunny' to test different alerts!
+            const currentCondition = 'Heatwave'; 
 
             const banner = document.createElement('div');
             banner.id = 'weather-alert-banner';
             banner.className = 'weather-banner';
             
-            // Insert after navbar
+            // Inject the banner right after the Navbar
             const navbar = document.querySelector('.navbar');
             if(navbar) {
                 navbar.parentNode.insertBefore(banner, navbar.nextSibling);
@@ -161,20 +177,14 @@
             }
         }
 
-        // --- FEATURE 3: LOCAL LANGUAGE VOICE GUIDE (Text-to-Speech) ---
+        // --- AUDIO GUIDE LOGIC ---
         function playAudio(name, text) {
-            // Check browser support
             if ('speechSynthesis' in window) {
-                // Cancel any playing audio
-                window.speechSynthesis.cancel();
-
+                window.speechSynthesis.cancel(); // Stop any previous speech
                 const utterance = new SpeechSynthesisUtterance();
-                utterance.text = `Now exploring ${name}. ${text} Please stay safe and enjoy your visit.`;
-                
-                // You can try setting language to 'en-IN' for Indian English accent if available
-                utterance.lang = 'en-IN'; 
-                utterance.rate = 0.9; // Slightly slower for clarity
-
+                utterance.text = `Now exploring ${name}. ${text} Please stay safe.`;
+                utterance.lang = 'en-IN'; // Indian Accent
+                utterance.rate = 0.9;
                 window.speechSynthesis.speak(utterance);
                 alert("Playing Audio Guide for " + name);
             } else {
