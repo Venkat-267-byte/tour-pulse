@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destinations | Tour Pulse</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,258 +15,70 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="destinations.html" class="active">Destinations</a></li>
-            
-            <li><a href="safety.html" style="color: #d32f2f; font-weight: bold;">Safety Shield</a></li>
-            
-            <li><a href="index.html#essentials">Essentials</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="safety.html" style="color: #d32f2f; font-weight: 700;">Safety Shield</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="nav-actions">
-            <button class="btn-login">Sign In</button>
-            <i class="fas fa-bars menu-toggle"></i>
-        </div>
     </nav>
 
-    <header class="page-header">
-        <h1>The Collection</h1>
-        <p style="opacity: 0.8; margin-top: 10px;">20 Iconic Locations</p>
+    <header class="page-header" style="background: #111; color: white; padding: 100px 0; text-align: center;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem;">The Collection</h1>
+        <p>20 Iconic locations handpicked for you.</p>
     </header>
 
-    <section class="section">
+    <section class="section" style="padding: 50px 5%;">
         <div class="container">
-            <div class="filters">
-                <button class="filter-btn active" onclick="filterDestinations('All')">All</button>
-                <button class="filter-btn" onclick="filterDestinations('Heritage')">Heritage</button>
-                <button class="filter-btn" onclick="filterDestinations('Nature')">Nature</button>
-                <button class="filter-btn" onclick="filterDestinations('Museum')">Museums</button>
-                <button class="filter-btn" onclick="filterDestinations('Spiritual')">Spiritual</button>
-            </div>
-
-            <div class="grid-cards" id="destinations-grid"></div>
+            <div class="grid-cards" id="destinations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;"></div>
         </div>
     </section>
 
-    <div id="info-modal" class="modal">
-        <span class="close-modal">×</span>
-        <div class="modal-content">
-            <div class="modal-image-wrapper" style="flex:1;">
-                <img id="modal-img" src="" alt="Place" style="width:100%; height:100%; object-fit:cover;">
-            </div>
-            <div class="modal-text" style="flex:1; padding:60px;">
-                <span id="modal-cat" class="tag" style="position:relative; top:0; left:0; background:#f0f0f0; margin-bottom:20px; display:inline-block;">Category</span>
-                <h2 id="modal-title" style="font-family:var(--font-head); font-size:2.5rem; margin-bottom:20px;">Title</h2>
-                <p id="modal-desc" style="color:#666; margin-bottom:30px; line-height:1.8;">Description</p>
-                <a id="modal-map" href="#" target="_blank" class="btn-primary" style="background:#111; color:white;">
-                    View on Map
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="copyright">© 2025 Tour Pulse.</div>
+    <footer style="background: #111; color: #888; padding: 50px; text-align: center;">
+        <p>© 2025 Tour Pulse.</p>
     </footer>
 
     <script>
-    // --- EMBEDDED DATA (Fail-Safe) ---
-    const destinations = [
-        {
-            name: "Charminar",
-            category: "Heritage",
-            image: "https://images.unsplash.com/photo-1560388414-b83c4852e642?q=80",
-            desc: "The global icon of Hyderabad, built in 1591. Famous for its four minarets and Laad Bazaar.",
-            map: "https://www.google.com/maps/search/?api=1&query=Charminar+Hyderabad"
-        },
-        {
-            name: "Golconda Fort",
-            category: "Heritage",
-            image: "https://images.unsplash.com/photo-1590425881474-783dfdf354eb?q=80",
-            desc: "A medieval fortress known for its acoustic system and diamond mines.",
-            map: "https://www.google.com/maps/search/?api=1&query=Golconda+Fort+Hyderabad"
-        },
-        {
-            name: "Hussain Sagar",
-            category: "Nature",
-            image: "https://upload.wikimedia.org/wikipedia/commons/7/71/Hussain_Sagar_Lake_Hyderabad.jpg",
-            desc: "Asia's largest heart-shaped artificial lake, featuring a massive Buddha statue.",
-            map: "https://www.google.com/maps/search/?api=1&query=Hussain+Sagar+Hyderabad"
-        },
-        {
-            name: "Ramoji Film City",
-            category: "Museum",
-            image: "https://images.unsplash.com/photo-1626014903264-6df594411d2c?q=80",
-            desc: "The world's largest integrated film city complex.",
-            map: "https://www.google.com/maps/search/?api=1&query=Ramoji+Film+City"
-        },
-        {
-            name: "Birla Mandir",
-            category: "Spiritual",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Birla_mandir.jpg/800px-Birla_mandir.jpg",
-            desc: "A white marble temple offering panoramic city views.",
-            map: "https://www.google.com/maps/search/?api=1&query=Birla+Mandir+Hyderabad"
-        },
-        {
-            name: "Salar Jung Museum",
-            category: "Museum",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Salar_jung_museum_hyderabad.jpg/800px-Salar_jung_museum_hyderabad.jpg",
-            desc: "One of the largest one-man collections of antiques in the world.",
-            map: "https://www.google.com/maps/search/?api=1&query=Salar+Jung+Museum"
-        },
-        {
-            name: "Chowmahalla Palace",
-            category: "Heritage",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Chowmahalla_Palace_Durbar_Hall.jpg/800px-Chowmahalla_Palace_Durbar_Hall.jpg",
-            desc: "The seat of the Asaf Jahi dynasty, known for its elegance.",
-            map: "https://www.google.com/maps/search/?api=1&query=Chowmahalla+Palace"
-        },
-        {
-            name: "Qutub Shahi Tombs",
-            category: "Heritage",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Qutb_Shahi_Tombs_01.jpg/800px-Qutb_Shahi_Tombs_01.jpg",
-            desc: "Majestic granite tombs of the seven Qutub Shahi rulers.",
-            map: "https://www.google.com/maps/search/?api=1&query=Qutub+Shahi+Tombs"
-        },
-        {
-            name: "Nehru Zoo Park",
-            category: "Nature",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/White_Tiger_at_Nehru_Zoological_Park%2C_Hyderabad.jpg/800px-White_Tiger_at_Nehru_Zoological_Park%2C_Hyderabad.jpg",
-            desc: "Home to the white tiger, safari rides, and diverse wildlife.",
-            map: "https://www.google.com/maps/search/?api=1&query=Nehru+Zoological+Park"
-        },
-        {
-            name: "Lumbini Park",
-            category: "Nature",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Lumbini_Park.jpg/800px-Lumbini_Park.jpg",
-            desc: "Urban park famous for laser shows and musical fountains.",
-            map: "https://www.google.com/maps/search/?api=1&query=Lumbini+Park"
-        },
-        {
-            name: "NTR Gardens",
-            category: "Nature",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/NTR_Gardens.jpg/800px-NTR_Gardens.jpg",
-            desc: "Recreational garden with unique flora and a toy train.",
-            map: "https://www.google.com/maps/search/?api=1&query=NTR+Gardens"
-        },
-        {
-            name: "Chilkur Balaji",
-            category: "Spiritual",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chilkur_Balaji_Temple_Gopuram.jpg/800px-Chilkur_Balaji_Temple_Gopuram.jpg",
-            desc: "Famous 'Visa Balaji' temple known for not accepting donations.",
-            map: "https://www.google.com/maps/search/?api=1&query=Chilkur+Balaji"
-        },
-        {
-            name: "Mecca Masjid",
-            category: "Spiritual",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Mecca_Masjid_Hyderabad.jpg/800px-Mecca_Masjid_Hyderabad.jpg",
-            desc: "One of the oldest and largest mosques in India.",
-            map: "https://www.google.com/maps/search/?api=1&query=Mecca+Masjid+Hyderabad"
-        },
-        {
-            name: "Taramati Baradari",
-            category: "Heritage",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Taramati-Baradari.jpg/800px-Taramati-Baradari.jpg",
-            desc: "Historic Sarai known for its acoustic architecture.",
-            map: "https://www.google.com/maps/search/?api=1&query=Taramati+Baradari"
-        },
-        {
-            name: "Sudha Cars Museum",
-            category: "Museum",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Sudha_Cars_Museum_entrance.jpg/800px-Sudha_Cars_Museum_entrance.jpg",
-            desc: "Handmade car museum featuring cars shaped like burgers and shoes.",
-            map: "https://www.google.com/maps/search/?api=1&query=Sudha+Cars+Museum"
-        },
-        {
-            name: "KBR National Park",
-            category: "Nature",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Kbr_park.jpg/800px-Kbr_park.jpg",
-            desc: "Vast national park in Jubilee Hills with peacocks and walking trails.",
-            map: "https://www.google.com/maps/search/?api=1&query=KBR+National+Park"
-        },
-        {
-            name: "Shilparamam",
-            category: "Heritage",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Shilparamam_Diorama%2C_Hyderabad.jpg/800px-Shilparamam_Diorama%2C_Hyderabad.jpg",
-            desc: "Arts and crafts village showcasing ethnic rural life.",
-            map: "https://www.google.com/maps/search/?api=1&query=Shilparamam+Hyderabad"
-        },
-        {
-            name: "Jagannath Temple",
-            category: "Spiritual",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Jagannath_Temple_Hyderabad_India.jpg/800px-Jagannath_Temple_Hyderabad_India.jpg",
-            desc: "Modern replica of the Puri Jagannath temple with intricate carvings.",
-            map: "https://www.google.com/maps/search/?api=1&query=Jagannath+Temple+Hyderabad"
-        },
-        {
-            name: "Paigah Tombs",
-            category: "Heritage",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Paigah_Tombs_03.jpg/800px-Paigah_Tombs_03.jpg",
-            desc: "Tombs with unique geometrical patterned architecture.",
-            map: "https://www.google.com/maps/search/?api=1&query=Paigah+Tombs"
-        },
-        {
-            name: "Statue of Equality",
-            category: "Spiritual",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Statue_of_Equality%2C_Hyderabad.jpg/600px-Statue_of_Equality%2C_Hyderabad.jpg",
-            desc: "Massive statue symbolizing equality and devotion.",
-            map: "https://www.google.com/maps/search/?api=1&query=Statue+of+Equality"
-        }
-    ];
+        const destinations = [
+            { name: "Charminar", category: "Heritage", image: "https://images.unsplash.com/photo-1560388414-b83c4852e642?q=80&w=1974", desc: "The global icon of Hyderabad.", map: "https://goo.gl/maps/1" },
+            { name: "Golconda Fort", category: "Heritage", image: "https://images.unsplash.com/photo-1590425881474-783dfdf354eb?q=80", desc: "A medieval fortress with acoustic wonders.", map: "https://goo.gl/maps/2" },
+            { name: "Hussain Sagar", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/7/71/Hussain_Sagar_Lake_Hyderabad.jpg", desc: "Heart-shaped lake with a Buddha statue.", map: "https://goo.gl/maps/3" },
+            { name: "Ramoji Film City", category: "Entertainment", image: "https://images.unsplash.com/photo-1626014903264-6df594411d2c?q=80", desc: "World's largest film city complex.", map: "https://goo.gl/maps/4" },
+            { name: "Birla Mandir", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Birla_mandir.jpg/800px-Birla_mandir.jpg", desc: "White marble temple on a hill.", map: "https://goo.gl/maps/5" },
+            { name: "Salar Jung Museum", category: "Museum", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Salar_jung_museum_hyderabad.jpg/800px-Salar_jung_museum_hyderabad.jpg", desc: "Largest one-man antique collection.", map: "https://goo.gl/maps/6" },
+            { name: "Chowmahalla Palace", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Chowmahalla_Palace_Durbar_Hall.jpg/800px-Chowmahalla_Palace_Durbar_Hall.jpg", desc: "Seat of the Asaf Jahi dynasty.", map: "https://goo.gl/maps/7" },
+            { name: "Qutub Shahi Tombs", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Qutb_Shahi_Tombs_01.jpg/800px-Qutb_Shahi_Tombs_01.jpg", desc: "Majestic granite tombs of rulers.", map: "https://goo.gl/maps/8" },
+            { name: "Nehru Zoo Park", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/White_Tiger_at_Nehru_Zoological_Park%2C_Hyderabad.jpg/800px-White_Tiger_at_Nehru_Zoological_Park%2C_Hyderabad.jpg", desc: "Home to the white tiger safari.", map: "https://goo.gl/maps/9" },
+            { name: "Lumbini Park", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Lumbini_Park.jpg/800px-Lumbini_Park.jpg", desc: "Laser shows and musical fountains.", map: "https://goo.gl/maps/10" },
+            { name: "NTR Gardens", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/NTR_Gardens.jpg/800px-NTR_Gardens.jpg", desc: "Recreational garden with toy train.", map: "https://goo.gl/maps/11" },
+            { name: "Chilkur Balaji", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chilkur_Balaji_Temple_Gopuram.jpg/800px-Chilkur_Balaji_Temple_Gopuram.jpg", desc: "Famous Visa Balaji temple.", map: "https://goo.gl/maps/12" },
+            { name: "Mecca Masjid", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Mecca_Masjid_Hyderabad.jpg/800px-Mecca_Masjid_Hyderabad.jpg", desc: "One of the oldest mosques in India.", map: "https://goo.gl/maps/13" },
+            { name: "Taramati Baradari", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Taramati-Baradari.jpg/800px-Taramati-Baradari.jpg", desc: "Historic Sarai with great acoustics.", map: "https://goo.gl/maps/14" },
+            { name: "Sudha Cars Museum", category: "Museum", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Sudha_Cars_Museum_entrance.jpg/800px-Sudha_Cars_Museum_entrance.jpg", desc: "Wacky handmade car museum.", map: "https://goo.gl/maps/15" },
+            { name: "KBR National Park", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Kbr_park.jpg/800px-Kbr_park.jpg", desc: "National park in Jubilee Hills.", map: "https://goo.gl/maps/16" },
+            { name: "Shilparamam", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Shilparamam_Diorama%2C_Hyderabad.jpg/800px-Shilparamam_Diorama%2C_Hyderabad.jpg", desc: "Arts and crafts village.", map: "https://goo.gl/maps/17" },
+            { name: "Jagannath Temple", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Jagannath_Temple_Hyderabad_India.jpg/800px-Jagannath_Temple_Hyderabad_India.jpg", desc: "Replica of Puri Jagannath temple.", map: "https://goo.gl/maps/18" },
+            { name: "Paigah Tombs", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Paigah_Tombs_03.jpg/800px-Paigah_Tombs_03.jpg", desc: "Unique geometrical architecture.", map: "https://goo.gl/maps/19" },
+            { name: "Statue of Equality", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Statue_of_Equality%2C_Hyderabad.jpg/600px-Statue_of_Equality%2C_Hyderabad.jpg", desc: "Massive statue of Ramanujacharya.", map: "https://goo.gl/maps/20" }
+        ];
 
-    // --- RENDER LOGIC ---
-    document.addEventListener('DOMContentLoaded', () => {
-        const grid = document.getElementById('destinations-grid');
-        if (grid) {
-            grid.innerHTML = ''; 
-            destinations.forEach(place => {
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.innerHTML = `
-                    <div class="card-image">
-                        <img src="${place.image}" alt="${place.name}" loading="lazy">
-                        <span class="tag">${place.category}</span>
-                    </div>
-                    <div class="card-info">
-                        <h3>${place.name}</h3>
-                        <p>${place.desc}</p>
-                        <button class="btn-link" onclick="openModal('${place.name}')">
-                            View Details <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-    });
-
-    // --- FILTER LOGIC ---
-    function filterDestinations(category) {
-        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-        event.target.classList.add('active');
-        
-        const grid = document.getElementById('destinations-grid');
-        grid.innerHTML = '';
-
-        const filtered = category === 'All' ? destinations : destinations.filter(p => p.category === category);
-        
-        filtered.forEach(place => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `
-                <div class="card-image">
-                    <img src="${place.image}" alt="${place.name}" loading="lazy">
-                    <span class="tag">${place.category}</span>
-                </div>
-                <div class="card-info">
-                    <h3>${place.name}</h3>
-                    <p>${place.desc}</p>
-                    <button class="btn-link" onclick="openModal('${place.name}')">
-                        View Details <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
-            `;
-            grid.appendChild(card);
-        });
-    }
-</script>
+        window.onload = function() {
+            const grid = document.getElementById('destinations-grid');
+            if(grid) {
+                grid.innerHTML = '';
+                destinations.forEach(place => {
+                    grid.innerHTML += `
+                        <div class="card" style="background: white; border: 1px solid #eee; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                            <div style="height: 200px; overflow: hidden;">
+                                <img src="${place.image}" style="width: 100%; height: 100%; object-fit: cover;" alt="${place.name}">
+                            </div>
+                            <div style="padding: 20px;">
+                                <h3 style="margin: 0 0 10px 0; font-family: sans-serif;">${place.name}</h3>
+                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">${place.desc}</p>
+                                <a href="${place.map}" target="_blank" style="color: #8A1538; font-weight: bold; text-decoration: none;">View on Map →</a>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+        };
+    </script>
 </body>
 </html>
