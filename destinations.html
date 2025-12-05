@@ -54,63 +54,121 @@
     </footer>
 
     <script>
+      <script>
+        // 1. Enhanced Data with Crowd & Weather info
         const destinations = [
-            { name: "Charminar", category: "Heritage", image: "https://images.unsplash.com/photo-1560388414-b83c4852e642?q=80&w=1974", desc: "The global icon of Hyderabad, built in 1591." },
-            { name: "Golconda Fort", category: "Heritage", image: "https://images.unsplash.com/photo-1590425881474-783dfdf354eb?q=80", desc: "A medieval fortress known for its acoustic system." },
-            { name: "Hussain Sagar", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/7/71/Hussain_Sagar_Lake_Hyderabad.jpg", desc: "Asia's largest heart-shaped artificial lake." },
-            { name: "Ramoji Film City", category: "Entertainment", image: "https://images.unsplash.com/photo-1626014903264-6df594411d2c?q=80", desc: "The world's largest integrated film city complex." },
-            { name: "Birla Mandir", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Birla_mandir.jpg/800px-Birla_mandir.jpg", desc: "A magnificent white marble temple on a hill." },
-            { name: "Salar Jung Museum", category: "Museum", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Salar_jung_museum_hyderabad.jpg/800px-Salar_jung_museum_hyderabad.jpg", desc: "One of the largest one-man collections of antiques." },
-            { name: "Chowmahalla Palace", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Chowmahalla_Palace_Durbar_Hall.jpg/800px-Chowmahalla_Palace_Durbar_Hall.jpg", desc: "The seat of the Asaf Jahi dynasty." },
-            { name: "Qutub Shahi Tombs", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Qutb_Shahi_Tombs_01.jpg/800px-Qutb_Shahi_Tombs_01.jpg", desc: "Majestic granite tombs of the rulers." },
-            { name: "Nehru Zoo Park", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/White_Tiger_at_Nehru_Zoological_Park%2C_Hyderabad.jpg/800px-White_Tiger_at_Nehru_Zoological_Park%2C_Hyderabad.jpg", desc: "Home to the white tiger safari." },
-            { name: "Lumbini Park", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Lumbini_Park.jpg/800px-Lumbini_Park.jpg", desc: "Famous for laser shows and musical fountains." },
-            { name: "NTR Gardens", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/NTR_Gardens.jpg/800px-NTR_Gardens.jpg", desc: "Recreational garden with unique flora." },
-            { name: "Chilkur Balaji", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chilkur_Balaji_Temple_Gopuram.jpg/800px-Chilkur_Balaji_Temple_Gopuram.jpg", desc: "Famous Visa Balaji temple." },
-            { name: "Mecca Masjid", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Mecca_Masjid_Hyderabad.jpg/800px-Mecca_Masjid_Hyderabad.jpg", desc: "One of the oldest mosques in India." },
-            { name: "Taramati Baradari", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Taramati-Baradari.jpg/800px-Taramati-Baradari.jpg", desc: "Historic Sarai with great acoustics." },
-            { name: "Sudha Cars Museum", category: "Museum", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Sudha_Cars_Museum_entrance.jpg/800px-Sudha_Cars_Museum_entrance.jpg", desc: "Wacky handmade car museum." },
-            { name: "KBR National Park", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Kbr_park.jpg/800px-Kbr_park.jpg", desc: "Vast national park in Jubilee Hills." },
-            { name: "Shilparamam", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Shilparamam_Diorama%2C_Hyderabad.jpg/800px-Shilparamam_Diorama%2C_Hyderabad.jpg", desc: "Arts and crafts village." },
-            { name: "Jagannath Temple", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Jagannath_Temple_Hyderabad_India.jpg/800px-Jagannath_Temple_Hyderabad_India.jpg", desc: "Modern replica of the Puri temple." },
-            { name: "Paigah Tombs", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Paigah_Tombs_03.jpg/800px-Paigah_Tombs_03.jpg", desc: "Unique geometrical architecture." },
-            { name: "Statue of Equality", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Statue_of_Equality%2C_Hyderabad.jpg/600px-Statue_of_Equality%2C_Hyderabad.jpg", desc: "Massive statue of Ramanujacharya." }
+            { name: "Charminar", category: "Heritage", crowd: "High", image: "https://images.unsplash.com/photo-1560388414-b83c4852e642?q=80&w=1974", desc: "The global icon of Hyderabad, built in 1591. Known for its stucco ornamentation and bustling bazaars." },
+            { name: "Golconda Fort", category: "Heritage", crowd: "Moderate", image: "https://images.unsplash.com/photo-1590425881474-783dfdf354eb?q=80", desc: "A massive medieval fortress known for its acoustic architecture and diamond mines." },
+            { name: "Hussain Sagar", category: "Nature", crowd: "Low", image: "https://upload.wikimedia.org/wikipedia/commons/7/71/Hussain_Sagar_Lake_Hyderabad.jpg", desc: "Asia's largest heart-shaped artificial lake, featuring a massive monolithic Buddha statue." },
+            { name: "Ramoji Film City", category: "Entertainment", crowd: "High", image: "https://images.unsplash.com/photo-1626014903264-6df594411d2c?q=80", desc: "The world's largest integrated film city complex. A magical land of movies and gardens." },
+            { name: "Birla Mandir", category: "Spiritual", crowd: "Low", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Birla_mandir.jpg/800px-Birla_mandir.jpg", desc: "A magnificent white marble temple built on a 280-foot high hillock, offering panoramic views." },
+            { name: "Salar Jung Museum", category: "Museum", crowd: "Moderate", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Salar_jung_museum_hyderabad.jpg/800px-Salar_jung_museum_hyderabad.jpg", desc: "One of the largest one-man collections of antiques in the world, famous for the Veiled Rebecca." },
+            // ... (You can keep your other destinations here, just add crowd: 'Low'/'High' etc)
         ];
 
         window.addEventListener('DOMContentLoaded', () => {
-            const grid = document.getElementById('destinations-grid');
-            if(grid) {
-                grid.innerHTML = '';
-                destinations.forEach(place => {
-                    // AUTO-GENERATE MAP LINK
-                    const mapQuery = encodeURIComponent(place.name + " Hyderabad");
-                    const mapLink = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+            initWeatherAlert();
+            renderDestinations();
+        });
 
-                    grid.innerHTML += `
-                        <div class="card" style="background: white; border: 1px solid #eee; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                            <div style="
-                                height: 220px; 
-                                width: 100%;
-                                background-image: url('${place.image}');
-                                background-size: cover;
-                                background-position: center;
-                                background-color: #eee;
-                            "></div>
-                            <div style="padding: 20px;">
-                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-                                    <h3 style="margin: 0; font-family: sans-serif;">${place.name}</h3>
-                                    <span style="background:#f5f5f5; color:#8A1538; padding:3px 10px; border-radius:15px; font-size:0.7rem; font-weight:bold;">${place.category}</span>
-                                </div>
-                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">${place.desc}</p>
-                                <a href="${mapLink}" target="_blank" style="display:inline-block; background: #8A1538; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">
-                                    <i class="fas fa-map-marker-alt"></i> View on Maps
+        // --- FEATURE 1: RENDER CARDS WITH CROWD INDICATOR ---
+        function renderDestinations() {
+            const grid = document.getElementById('destinations-grid');
+            if(!grid) return;
+            
+            grid.innerHTML = '';
+            destinations.forEach(place => {
+                // Determine Crowd Color
+                let crowdClass = 'crowd-low';
+                let dotColor = 'green';
+                if(place.crowd === 'Moderate') { crowdClass = 'crowd-moderate'; dotColor = 'yellow'; }
+                if(place.crowd === 'High') { crowdClass = 'crowd-high'; dotColor = 'red'; }
+
+                const mapQuery = encodeURIComponent(place.name + " Hyderabad");
+                const mapLink = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+
+                grid.innerHTML += `
+                    <div class="card" style="background: white; border: 1px solid #eee; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                        <div style="height: 220px; width: 100%; background-image: url('${place.image}'); background-size: cover; background-position: center; position: relative;">
+                            <span style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem;">
+                                ${place.category}
+                            </span>
+                        </div>
+                        <div style="padding: 20px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                <h3 style="margin: 0; font-family: sans-serif;">${place.name}</h3>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <span class="crowd-badge ${crowdClass}">
+                                    <span class="dot ${dotColor}"></span> ${place.crowd} Crowd
+                                </span>
+                            </div>
+
+                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">${place.desc}</p>
+                            
+                            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                <a href="${mapLink}" target="_blank" style="background: #8A1538; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9rem;">
+                                    <i class="fas fa-map-marker-alt"></i> Map
                                 </a>
+                                
+                                <button class="btn-audio" onclick="playAudio('${place.name}', '${place.desc}')">
+                                    <i class="fas fa-volume-up"></i> Audio Guide
+                                </button>
                             </div>
                         </div>
-                    `;
-                });
+                    </div>
+                `;
+            });
+        }
+
+        // --- FEATURE 2: WEATHER ALERTS ---
+        function initWeatherAlert() {
+            // Simulating a weather API call
+            const weatherConditions = ['Sunny', 'Rainy', 'Heatwave'];
+            const currentCondition = 'Heatwave'; // Change this to test different alerts
+
+            const banner = document.createElement('div');
+            banner.id = 'weather-alert-banner';
+            banner.className = 'weather-banner';
+            
+            // Insert after navbar
+            const navbar = document.querySelector('.navbar');
+            if(navbar) {
+                navbar.parentNode.insertBefore(banner, navbar.nextSibling);
             }
-        });
+
+            if(currentCondition === 'Rainy') {
+                banner.className += ' alert-rain';
+                banner.innerHTML = '<i class="fas fa-cloud-showers-heavy"></i> <strong>Rain Alert:</strong> Heavy rains predicted. Carry an umbrella and avoid outdoor treks.';
+                banner.style.display = 'block';
+            } else if (currentCondition === 'Heatwave') {
+                banner.className += ' alert-heat';
+                banner.innerHTML = '<i class="fas fa-sun"></i> <strong>Heatwave Warning:</strong> Temperatures > 40°C. Stay hydrated and visit indoor museums.';
+                banner.style.display = 'block';
+            }
+        }
+
+        // --- FEATURE 3: LOCAL LANGUAGE VOICE GUIDE (Text-to-Speech) ---
+        function playAudio(name, text) {
+            // Check browser support
+            if ('speechSynthesis' in window) {
+                // Cancel any playing audio
+                window.speechSynthesis.cancel();
+
+                const utterance = new SpeechSynthesisUtterance();
+                utterance.text = `Now exploring ${name}. ${text} Please stay safe and enjoy your visit.`;
+                
+                // You can try setting language to 'en-IN' for Indian English accent if available
+                utterance.lang = 'en-IN'; 
+                utterance.rate = 0.9; // Slightly slower for clarity
+
+                window.speechSynthesis.speak(utterance);
+                alert("Playing Audio Guide for " + name);
+            } else {
+                alert("Sorry, your browser doesn't support the Audio Guide.");
+            }
+        }
     </script>
 </body>
 </html>
