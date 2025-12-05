@@ -1,40 +1,77 @@
-/* --- Tour Pulse Styles --- */
+/* --- GLOBAL VARIABLES --- */
 :root {
-    --primary: #8A1538; 
+    --primary: #8A1538; /* Qatar Maroon */
+    --safety-red: #d32f2f; /* Emergency Red */
     --dark: #1A1A1A;
     --gray: #F5F5F5;
+    --font-head: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'DM Sans', sans-serif; background: white; color: var(--dark); line-height: 1.6; }
+body { font-family: var(--font-body); background: white; color: var(--dark); line-height: 1.6; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
-/* Navbar */
+/* --- NAVBAR --- */
 .navbar {
     display: flex; justify-content: space-between; align-items: center;
     padding: 20px 5%; position: fixed; width: 100%; top: 0; z-index: 1000;
     background: rgba(255,255,255,0.98); border-bottom: 1px solid #eee;
 }
-.logo { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--dark); }
+.logo { font-family: var(--font-head); font-size: 1.6rem; font-weight: 700; color: var(--dark); }
 .nav-links { display: flex; gap: 30px; }
 .nav-links a { font-weight: 500; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #555; }
 .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+.safety-link { color: var(--safety-red) !important; font-weight: 700 !important; }
 .btn-login { padding: 8px 25px; border: 1px solid #ddd; background: transparent; border-radius: 4px; cursor: pointer; }
 .menu-toggle { display: none; }
 
-/* Essentials Grid */
+/* --- SECTIONS & CARDS --- */
 .section { padding: 80px 5%; }
 .section-header { text-align: center; margin-bottom: 50px; }
-.section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
+.section-header h2 { font-family: var(--font-head); font-size: 2.5rem; margin-bottom: 10px; }
+.card { background: white; border: 1px solid #eee; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+.card:hover { transform: translateY(-5px); }
+
+/* --- ESSENTIALS GRID --- */
 .essentials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
 .info-box { text-align: center; padding: 20px; background: var(--gray); border-radius: 8px; }
 .icon-minimal { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
 
-/* Footer */
-footer { background: #111; color: #888; padding: 60px 5% 20px; }
+/* --- SAFETY PAGE STYLES (Restored) --- */
+.safety-body { background: #fafafa; padding-top: 100px; }
+.safety-container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+.safety-header { text-align: center; margin-bottom: 40px; }
+.safety-header h1 { color: var(--safety-red); font-size: 2.5rem; font-family: var(--font-head); }
+#location-status { color: #666; font-weight: bold; margin-top: 10px; }
+
+/* SOS Buttons */
+.sos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-bottom: 50px; }
+.sos-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; border-radius: 10px; color: white; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: 0.2s; }
+.sos-btn:hover { transform: scale(1.05); }
+.sos-btn i { font-size: 1.5rem; margin-bottom: 5px; }
+.sos-btn span { font-size: 1.5rem; font-weight: 800; }
+.sos-btn.red { background: linear-gradient(135deg, #ff4d4d, #d32f2f); }
+.sos-btn.blue { background: linear-gradient(135deg, #4da6ff, #0056b3); }
+.sos-btn.green { background: linear-gradient(135deg, #4dff88, #00802b); }
+.sos-btn.purple { background: linear-gradient(135deg, #c74dff, #6a00b3); }
+
+/* Map & Share */
+#safety-map { height: 300px; width: 100%; border-radius: 15px; border: 2px solid #ddd; margin-bottom: 20px; }
+.btn-share { width: 100%; padding: 15px; background: #25D366; color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; }
+.btn-share:hover { background: #128C7E; }
+
+/* Safety Cards (Police/Hospital) */
+.safety-card { display: flex; align-items: center; padding: 20px; gap: 20px; margin-bottom: 20px; }
+.safety-icon { font-size: 2rem; color: var(--safety-red); background: #fff0f0; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+.safety-info h3 { font-size: 1.1rem; margin-bottom: 5px; }
+.btn-locate { background: none; border: none; color: var(--safety-red); font-weight: bold; cursor: pointer; padding: 0; font-size: 0.9rem; }
+
+/* --- FOOTER --- */
+footer { background: #111; color: #888; padding: 60px 5% 20px; margin-top: 50px; }
 .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
-.footer-col h3 { color: white; margin-bottom: 20px; font-family: 'Playfair Display', serif; }
+.footer-col h3 { color: white; margin-bottom: 20px; font-family: var(--font-head); }
 .socials i { font-size: 1.2rem; margin-right: 15px; color: white; }
 .copyright { border-top: 1px solid #333; padding-top: 20px; text-align: center; font-size: 0.8rem; }
 
@@ -42,5 +79,4 @@ footer { background: #111; color: #888; padding: 60px 5% 20px; }
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .menu-toggle { display: block; font-size: 1.5rem; }
-    .hero-content h1 { font-size: 2.5rem !important; }
 }
