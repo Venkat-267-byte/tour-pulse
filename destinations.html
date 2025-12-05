@@ -15,70 +15,47 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="destinations.html" class="active">Destinations</a></li>
-            <li><a href="safety.html" style="color: #d32f2f; font-weight: 700;">Safety Shield</a></li>
+            <li><a href="safety.html" class="safety-link">Safety Shield</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <header class="page-header" style="background: #111; color: white; padding: 100px 0; text-align: center;">
         <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem;">The Collection</h1>
-        <p>20 Iconic locations handpicked for you.</p>
+        <p>20 Iconic locations.</p>
     </header>
 
-    <section class="section" style="padding: 50px 5%;">
+    <section class="section">
         <div class="container">
             <div class="grid-cards" id="destinations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;"></div>
         </div>
     </section>
 
-    <footer style="background: #111; color: #888; padding: 50px; text-align: center;">
-        <p>© 2025 Tour Pulse.</p>
-    </footer>
-
     <script>
         const destinations = [
-            { name: "Charminar", category: "Heritage", image: "https://images.unsplash.com/photo-1560388414-b83c4852e642?q=80&w=1974", desc: "The global icon of Hyderabad.", map: "https://goo.gl/maps/1" },
-            { name: "Golconda Fort", category: "Heritage", image: "https://images.unsplash.com/photo-1590425881474-783dfdf354eb?q=80", desc: "A medieval fortress with acoustic wonders.", map: "https://goo.gl/maps/2" },
-            { name: "Hussain Sagar", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/7/71/Hussain_Sagar_Lake_Hyderabad.jpg", desc: "Heart-shaped lake with a Buddha statue.", map: "https://goo.gl/maps/3" },
-            { name: "Ramoji Film City", category: "Entertainment", image: "https://images.unsplash.com/photo-1626014903264-6df594411d2c?q=80", desc: "World's largest film city complex.", map: "https://goo.gl/maps/4" },
-            { name: "Birla Mandir", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Birla_mandir.jpg/800px-Birla_mandir.jpg", desc: "White marble temple on a hill.", map: "https://goo.gl/maps/5" },
-            { name: "Salar Jung Museum", category: "Museum", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Salar_jung_museum_hyderabad.jpg/800px-Salar_jung_museum_hyderabad.jpg", desc: "Largest one-man antique collection.", map: "https://goo.gl/maps/6" },
-            { name: "Chowmahalla Palace", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Chowmahalla_Palace_Durbar_Hall.jpg/800px-Chowmahalla_Palace_Durbar_Hall.jpg", desc: "Seat of the Asaf Jahi dynasty.", map: "https://goo.gl/maps/7" },
-            { name: "Qutub Shahi Tombs", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Qutb_Shahi_Tombs_01.jpg/800px-Qutb_Shahi_Tombs_01.jpg", desc: "Majestic granite tombs of rulers.", map: "https://goo.gl/maps/8" },
-            { name: "Nehru Zoo Park", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/White_Tiger_at_Nehru_Zoological_Park%2C_Hyderabad.jpg/800px-White_Tiger_at_Nehru_Zoological_Park%2C_Hyderabad.jpg", desc: "Home to the white tiger safari.", map: "https://goo.gl/maps/9" },
-            { name: "Lumbini Park", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Lumbini_Park.jpg/800px-Lumbini_Park.jpg", desc: "Laser shows and musical fountains.", map: "https://goo.gl/maps/10" },
-            { name: "NTR Gardens", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/NTR_Gardens.jpg/800px-NTR_Gardens.jpg", desc: "Recreational garden with toy train.", map: "https://goo.gl/maps/11" },
-            { name: "Chilkur Balaji", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chilkur_Balaji_Temple_Gopuram.jpg/800px-Chilkur_Balaji_Temple_Gopuram.jpg", desc: "Famous Visa Balaji temple.", map: "https://goo.gl/maps/12" },
-            { name: "Mecca Masjid", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Mecca_Masjid_Hyderabad.jpg/800px-Mecca_Masjid_Hyderabad.jpg", desc: "One of the oldest mosques in India.", map: "https://goo.gl/maps/13" },
-            { name: "Taramati Baradari", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Taramati-Baradari.jpg/800px-Taramati-Baradari.jpg", desc: "Historic Sarai with great acoustics.", map: "https://goo.gl/maps/14" },
-            { name: "Sudha Cars Museum", category: "Museum", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Sudha_Cars_Museum_entrance.jpg/800px-Sudha_Cars_Museum_entrance.jpg", desc: "Wacky handmade car museum.", map: "https://goo.gl/maps/15" },
-            { name: "KBR National Park", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Kbr_park.jpg/800px-Kbr_park.jpg", desc: "National park in Jubilee Hills.", map: "https://goo.gl/maps/16" },
-            { name: "Shilparamam", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Shilparamam_Diorama%2C_Hyderabad.jpg/800px-Shilparamam_Diorama%2C_Hyderabad.jpg", desc: "Arts and crafts village.", map: "https://goo.gl/maps/17" },
-            { name: "Jagannath Temple", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Jagannath_Temple_Hyderabad_India.jpg/800px-Jagannath_Temple_Hyderabad_India.jpg", desc: "Replica of Puri Jagannath temple.", map: "https://goo.gl/maps/18" },
-            { name: "Paigah Tombs", category: "Heritage", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Paigah_Tombs_03.jpg/800px-Paigah_Tombs_03.jpg", desc: "Unique geometrical architecture.", map: "https://goo.gl/maps/19" },
-            { name: "Statue of Equality", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Statue_of_Equality%2C_Hyderabad.jpg/600px-Statue_of_Equality%2C_Hyderabad.jpg", desc: "Massive statue of Ramanujacharya.", map: "https://goo.gl/maps/20" }
+            { name: "Charminar", category: "Heritage", image: "https://images.unsplash.com/photo-1560388414-b83c4852e642?q=80", desc: "The global icon of Hyderabad.", map: "https://goo.gl/maps/1" },
+            { name: "Golconda Fort", category: "Heritage", image: "https://images.unsplash.com/photo-1590425881474-783dfdf354eb?q=80", desc: "Medieval fortress.", map: "https://goo.gl/maps/2" },
+            { name: "Hussain Sagar", category: "Nature", image: "https://upload.wikimedia.org/wikipedia/commons/7/71/Hussain_Sagar_Lake_Hyderabad.jpg", desc: "Heart-shaped lake.", map: "https://goo.gl/maps/3" },
+            { name: "Ramoji Film City", category: "Fun", image: "https://images.unsplash.com/photo-1626014903264-6df594411d2c?q=80", desc: "Largest film city.", map: "https://goo.gl/maps/4" },
+            { name: "Birla Mandir", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Birla_mandir.jpg/800px-Birla_mandir.jpg", desc: "White marble temple.", map: "https://goo.gl/maps/5" },
+            { name: "Chilkur Balaji", category: "Spiritual", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chilkur_Balaji_Temple_Gopuram.jpg/800px-Chilkur_Balaji_Temple_Gopuram.jpg", desc: "Visa Balaji temple.", map: "https://goo.gl/maps/6" }
         ];
 
-        window.onload = function() {
-            const grid = document.getElementById('destinations-grid');
-            if(grid) {
-                grid.innerHTML = '';
-                destinations.forEach(place => {
-                    grid.innerHTML += `
-                        <div class="card" style="background: white; border: 1px solid #eee; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                            <div style="height: 200px; overflow: hidden;">
-                                <img src="${place.image}" style="width: 100%; height: 100%; object-fit: cover;" alt="${place.name}">
-                            </div>
-                            <div style="padding: 20px;">
-                                <h3 style="margin: 0 0 10px 0; font-family: sans-serif;">${place.name}</h3>
-                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">${place.desc}</p>
-                                <a href="${place.map}" target="_blank" style="color: #8A1538; font-weight: bold; text-decoration: none;">View on Map →</a>
-                            </div>
-                        </div>
-                    `;
-                });
-            }
-        };
+        const grid = document.getElementById('destinations-grid');
+        destinations.forEach(place => {
+            grid.innerHTML += `
+                <div class="card">
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="${place.image}" style="width: 100%; height: 100%; object-fit: cover;" alt="${place.name}">
+                    </div>
+                    <div style="padding: 20px;">
+                        <h3 style="margin: 0 0 10px 0;">${place.name}</h3>
+                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">${place.desc}</p>
+                        <a href="${place.map}" target="_blank" style="color: #8A1538; font-weight: bold;">View Map →</a>
+                    </div>
+                </div>
+            `;
+        });
     </script>
 </body>
 </html>
