@@ -68,6 +68,19 @@ ul { list-style: none; }
 .safety-info h3 { font-size: 1.1rem; margin-bottom: 5px; }
 .btn-locate { background: none; border: none; color: var(--safety-red); font-weight: bold; cursor: pointer; padding: 0; font-size: 0.9rem; }
 
+/* ... previous styles for Safety Cards ... */
+.btn-locate { background: none; border: none; color: var(--safety-red); font-weight: bold; cursor: pointer; padding: 0; font-size: 0.9rem; }
+
+/* PASTE THE NEW CODE HERE */
+/* --- NEW FEATURES STYLES --- */
+.weather-banner {
+    /* ... content ... */
+}
+/* ... rest of the new CSS ... */
+
+
+/* --- FOOTER --- */
+footer { background: #111; color: #888; padding: 60px 5% 20px; margin-top: 50px; }
 /* --- FOOTER --- */
 footer { background: #111; color: #888; padding: 60px 5% 20px; margin-top: 50px; }
 .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
