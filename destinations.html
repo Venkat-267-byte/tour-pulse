@@ -90,4 +90,124 @@
             {
                 name: "Qutub Shahi Tombs",
                 category: "Heritage",
-                image: "
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Qutb_Shahi_Tombs_01.jpg/800px-Qutb_Shahi_Tombs_01.jpg",
+                desc: "Majestic granite tombs of the seven Qutub Shahi rulers.",
+                map: "https://goo.gl/maps/QutubShahi"
+            },
+            {
+                name: "Nehru Zoo Park",
+                category: "Nature",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/White_Tiger_at_Nehru_Zoological_Park%2C_Hyderabad.jpg/800px-White_Tiger_at_Nehru_Zoological_Park%2C_Hyderabad.jpg",
+                desc: "One of India's largest zoos, home to the white tiger safari.",
+                map: "https://goo.gl/maps/ZooPark"
+            },
+            {
+                name: "Lumbini Park",
+                category: "Nature",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Lumbini_Park.jpg/800px-Lumbini_Park.jpg",
+                desc: "Urban park famous for laser shows and musical fountains.",
+                map: "https://goo.gl/maps/Lumbini"
+            },
+            {
+                name: "NTR Gardens",
+                category: "Nature",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/NTR_Gardens.jpg/800px-NTR_Gardens.jpg",
+                desc: "Recreational garden with unique flora and a toy train.",
+                map: "https://goo.gl/maps/NTRGardens"
+            },
+            {
+                name: "Chilkur Balaji",
+                category: "Spiritual",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chilkur_Balaji_Temple_Gopuram.jpg/800px-Chilkur_Balaji_Temple_Gopuram.jpg",
+                desc: "Famous 'Visa Balaji' temple known for not accepting donations.",
+                map: "https://goo.gl/maps/Chilkur"
+            },
+            {
+                name: "Mecca Masjid",
+                category: "Spiritual",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Mecca_Masjid_Hyderabad.jpg/800px-Mecca_Masjid_Hyderabad.jpg",
+                desc: "One of the oldest and largest mosques in India.",
+                map: "https://goo.gl/maps/MeccaMasjid"
+            },
+            {
+                name: "Taramati Baradari",
+                category: "Heritage",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Taramati-Baradari.jpg/800px-Taramati-Baradari.jpg",
+                desc: "Historic Sarai with great acoustics.",
+                map: "https://goo.gl/maps/Taramati"
+            },
+            {
+                name: "Sudha Cars Museum",
+                category: "Museum",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Sudha_Cars_Museum_entrance.jpg/800px-Sudha_Cars_Museum_entrance.jpg",
+                desc: "Wacky handmade car museum featuring cars shaped like burgers.",
+                map: "https://goo.gl/maps/SudhaCars"
+            },
+            {
+                name: "KBR National Park",
+                category: "Nature",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Kbr_park.jpg/800px-Kbr_park.jpg",
+                desc: "Vast national park in Jubilee Hills with peacocks.",
+                map: "https://goo.gl/maps/KBRPark"
+            },
+            {
+                name: "Shilparamam",
+                category: "Heritage",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Shilparamam_Diorama%2C_Hyderabad.jpg/800px-Shilparamam_Diorama%2C_Hyderabad.jpg",
+                desc: "Arts and crafts village showcasing ethnic rural life.",
+                map: "https://goo.gl/maps/Shilparamam"
+            },
+            {
+                name: "Jagannath Temple",
+                category: "Spiritual",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Jagannath_Temple_Hyderabad_India.jpg/800px-Jagannath_Temple_Hyderabad_India.jpg",
+                desc: "Modern replica of the Puri Jagannath temple.",
+                map: "https://goo.gl/maps/Jagannath"
+            },
+            {
+                name: "Paigah Tombs",
+                category: "Heritage",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Paigah_Tombs_03.jpg/800px-Paigah_Tombs_03.jpg",
+                desc: "Unique geometrical patterned architecture.",
+                map: "https://goo.gl/maps/Paigah"
+            },
+            {
+                name: "Statue of Equality",
+                category: "Spiritual",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Statue_of_Equality%2C_Hyderabad.jpg/600px-Statue_of_Equality%2C_Hyderabad.jpg",
+                desc: "Massive statue symbolizing equality and devotion.",
+                map: "https://goo.gl/maps/Equality"
+            }
+        ];
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('destinations-grid');
+            if(grid) {
+                grid.innerHTML = '';
+                destinations.forEach(place => {
+                    grid.innerHTML += `
+                        <div class="card" style="background: white; border: 1px solid #eee; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                            <div style="
+                                height: 220px; 
+                                width: 100%;
+                                background-image: url('${place.image}');
+                                background-size: cover;
+                                background-position: center;
+                                background-color: #eee;
+                            "></div>
+                            <div style="padding: 20px;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                    <h3 style="margin: 0; font-family: sans-serif;">${place.name}</h3>
+                                    <span style="background:#f5f5f5; color:#8A1538; padding:3px 10px; border-radius:15px; font-size:0.7rem; font-weight:bold;">${place.category}</span>
+                                </div>
+                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">${place.desc}</p>
+                                <a href="${place.map}" target="_blank" style="color: #8A1538; font-weight: bold; text-decoration: none;">View on Map →</a>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
